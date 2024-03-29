@@ -1,0 +1,26 @@
+.btnNavbar{
+  width: 185px;
+  height: 45px;
+  border-radius: 10px;
+  box-shadow: 0 0 6px 0 black;
+
+  display: flex;
+  align-items: center;
+  color: var(--TextPrimaryColor);
+
+}
+
+.active{
+  color: var(--TextAcentColor);
+  background-color: var(--BtnPrimaryColor);
+  font-weight: bold;
+
+  .icon{
+    .navIcon{
+      path{
+        stroke: var(--TextAcentColor);
+        stroke-width: 2px;
+      }
+    }
+  }
+}

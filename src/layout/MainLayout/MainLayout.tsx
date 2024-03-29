@@ -1,17 +1,18 @@
-import React, { ReactNode } from 'react'
-import Navbar from '../Navbar/Navbar';
-
+import React, { ReactNode } from "react";
+import Navbar from "../Navbar/Navbar";
+import "./MainLayout.scss";
 
 type Props = {
   children: ReactNode;
 };
 
-
-export default function MainLayout({children}:Props) {
+export default function MainLayout({ children }: Props) {
   return (
     <>
-    <Navbar/>
-    {children}
+      <header>
+        <Navbar />
+      </header>
+      <main>{children}</main>
     </>
-  )
+  );
 }

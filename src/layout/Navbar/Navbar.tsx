@@ -1,42 +1,145 @@
-import React from 'react'
-import { RoutesDirectory } from '../../routes/RoutesDirectory'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { RoutesDirectory } from "../../routes/RoutesDirectory";
+import { NavLink } from "react-router-dom";
+import NavBtn from "@/components/BtnNavbar/BtnNavbar";
+import "./Navbar.scss";
+
+import HomeIcon from "@/assets/icons/navbar/HomeIcon";
+import CatalogoConceptosIcon from "@/assets/icons/navbar/CatalogoConceptosIcon";
+import CatalogoInsumosIcon from "@/assets/icons/navbar/CatalogoInsumosIcon";
+import PresupuestoObraIcon from "@/assets/icons/navbar/PresupuestoObraIcon";
+import ListadoInsumosIcon from "@/assets/icons/navbar/ListadoInsumosIcon";
+import ListadoConceptosIcon from "@/assets/icons/navbar/ListadoConceptosIcon";
+import ExplosionInsumosIcon from "@/assets/icons/navbar/ExplosionInsumosIcon";
+import AnalisisPUIcon from "@/assets/icons/navbar/AnalisisPUIcon";
+import ProgramacionObraIcon from "@/assets/icons/navbar/ProgramacionObraIcon";
 
 export default function Navbar() {
-  console.log(RoutesDirectory)
+  console.log(RoutesDirectory);
 
   return (
+    <ul className="asideNavbar">
+      <li>
+        <NavLink to={RoutesDirectory.HOME.slug} className="navLink">
+          {({ isActive }) => (
+            <NavBtn isActive={isActive}>
+              <span className="icon">
+                <HomeIcon className="navIcon" />
+              </span>
+              {RoutesDirectory.HOME.name}
+            </NavBtn>
+          )}
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="navLink" to={RoutesDirectory.CATALOGO_INSUMOS.slug}>
+          {({ isActive }) => (
+            <NavBtn isActive={isActive}>
+              <span className="icon">
+                <CatalogoInsumosIcon className="navIcon" />
+              </span>
+              {RoutesDirectory.CATALOGO_INSUMOS.name}
+            </NavBtn>
+          )}
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className="navLink"
+          to={RoutesDirectory.CALATALOGO_CONCEPTOS.slug}
+        >
+          {({ isActive }) => (
+            <NavBtn isActive={isActive}>
+              <span className="icon">
+                <CatalogoConceptosIcon className="navIcon" />
+              </span>
+              {RoutesDirectory.CALATALOGO_CONCEPTOS.name}
+            </NavBtn>
+          )}
+        </NavLink>
+      </li>
 
-    <ul>
       <li>
-        <NavLink to={RoutesDirectory.HOME.slug}>{RoutesDirectory.HOME.name}</NavLink>
+        <NavLink className="navLink" to={RoutesDirectory.PRESUPUESTO.slug}>
+          {({ isActive }) => (
+            <NavBtn isActive={isActive}>
+              <span className="icon">
+                <PresupuestoObraIcon className="navIcon" />
+              </span>
+              {RoutesDirectory.PRESUPUESTO.name}
+            </NavBtn>
+          )}
+        </NavLink>
       </li>
       <li>
-        <NavLink to={RoutesDirectory.CATALOGO_INSUMOS.slug}>{RoutesDirectory.CATALOGO_INSUMOS.name}</NavLink>
+        <NavLink className="navLink" to={RoutesDirectory.LISTADO_INSUMOS.slug}>
+          {({ isActive }) => (
+            <NavBtn isActive={isActive}>
+              <span className="icon">
+                <ListadoInsumosIcon className="navIcon" />
+              </span>
+              {RoutesDirectory.LISTADO_INSUMOS.name}
+            </NavBtn>
+          )}
+        </NavLink>
       </li>
       <li>
-        <NavLink to={RoutesDirectory.CALATALOGO_CONCEPTOS.slug}>{RoutesDirectory.CALATALOGO_CONCEPTOS.name}</NavLink>
-      </li>
-
-
-      <li>
-        <NavLink to={RoutesDirectory.PRESUPUESTO.slug}>{RoutesDirectory.PRESUPUESTO.name}</NavLink>
-      </li>
-      <li>
-        <NavLink to={RoutesDirectory.LISTADO_INSUMOS.slug}>{RoutesDirectory.LISTADO_INSUMOS.name}</NavLink>
-      </li>
-      <li>
-        <NavLink to={RoutesDirectory.LISTADO_CONCEPTOS.slug}>{RoutesDirectory.LISTADO_CONCEPTOS.name}</NavLink>
-      </li>
-      <li>
-        <NavLink to={RoutesDirectory.EXPLOSION_INSUMOS.slug}>{RoutesDirectory.EXPLOSION_INSUMOS.name}</NavLink>
+        <NavLink
+          className="navLink"
+          to={RoutesDirectory.LISTADO_CONCEPTOS.slug}
+        >
+          {({ isActive }) => (
+            <NavBtn isActive={isActive}>
+              <span className="icon">
+                <ListadoConceptosIcon className="navIcon" />
+              </span>
+              {RoutesDirectory.LISTADO_CONCEPTOS.name}
+            </NavBtn>
+          )}
+        </NavLink>
       </li>
       <li>
-        <NavLink to={RoutesDirectory.ANALISIS_PU.slug}>{RoutesDirectory.ANALISIS_PU.name}</NavLink>
+        <NavLink
+          className="navLink"
+          to={RoutesDirectory.EXPLOSION_INSUMOS.slug}
+        >
+          {({ isActive }) => (
+            <NavBtn isActive={isActive}>
+              <span className="icon">
+                <ExplosionInsumosIcon className="navIcon" />
+              </span>
+              {RoutesDirectory.EXPLOSION_INSUMOS.name}
+            </NavBtn>
+          )}
+        </NavLink>
       </li>
       <li>
-        <NavLink to={RoutesDirectory.PROGRAMACION_OBRA.slug}>{RoutesDirectory.PROGRAMACION_OBRA.name}</NavLink>
+        <NavLink className="navLink" to={RoutesDirectory.ANALISIS_PU.slug}>
+          {({ isActive }) => (
+            <NavBtn isActive={isActive}>
+              <span className="icon">
+                <AnalisisPUIcon className="navIcon" />
+              </span>
+              {RoutesDirectory.ANALISIS_PU.name}
+            </NavBtn>
+          )}
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className="navLink"
+          to={RoutesDirectory.PROGRAMACION_OBRA.slug}
+        >
+          {({ isActive }) => (
+            <NavBtn isActive={isActive}>
+              <span className="icon">
+                <ProgramacionObraIcon className="navIcon" />
+              </span>
+              {RoutesDirectory.PROGRAMACION_OBRA.name}
+            </NavBtn>
+          )}
+        </NavLink>
       </li>
     </ul>
-  )
+  );
 }

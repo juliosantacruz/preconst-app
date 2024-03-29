@@ -1,0 +1,14 @@
+header{
+  width: var(--NavbarWidth);
+  max-width: 210px;
+  height: var(--NavbarHeight);
+
+  background-color: var(--BgAcentColor);
+}
+
+main{
+  width: calc( 100vw - 210px );
+  height: 100vh;
+
+  background-color: var(--BgColor);
+}
