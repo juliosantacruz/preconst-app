@@ -1,0 +1,32 @@
+.navbarFooter {
+  margin: 0 auto;
+  margin-top: auto;
+  width: 185px;
+  display: flex;
+  flex-direction: column;
+
+  .navbarFooterTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .navLinkConf{
+      width: 30px;
+    }
+    .logOutIcon {
+      border: none;
+      background: none;
+      color: var(--TextPrimaryColor);
+      gap: 6px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .navbarFooterBottom{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center
+  }
+}

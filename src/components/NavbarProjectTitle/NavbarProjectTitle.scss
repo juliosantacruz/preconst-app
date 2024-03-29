@@ -1,0 +1,35 @@
+.presupuestoInfo {
+  width: 185px;
+  border-top: 1px solid var(--TextPrimaryColor);
+  color: var(--TextPrimaryColor);
+  margin: 0 auto;
+  .infoHeader {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-size: 12px;
+    }
+    .closeProject {
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      background: none;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  .infoTitle{
+    width: 100%;
+    text-align: center;
+  }
+}

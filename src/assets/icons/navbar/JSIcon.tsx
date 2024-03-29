@@ -1,8 +1,12 @@
 import React from 'react'
 
-export default function JSIcon() {
+type Props = {
+  className?: string;
+};
+
+export default function JSIcon({ className }: Props) {
   return (
-    <svg width="79" height="50" viewBox="0 0 79 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className={className} width="79" height="50" viewBox="0 0 79 50" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_25_370)">
 <path d="M15.4739 16.1824H1.19031V18.6811H15.4739V16.1824Z" fill="#3F3F46" stroke="#3F3F46" stroke-width="1.1903"/>
 <path d="M77.3697 16.1824H63.0861V18.6811H77.3697V16.1824Z" fill="#3F3F46" stroke="#3F3F46" stroke-width="1.1903"/>
