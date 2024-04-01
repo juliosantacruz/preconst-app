@@ -2,7 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   color-scheme: light dark;
-
+  --margin-top: 10px;
   // project styles
   --BgColor:#fafafa;
   --BgAcentColor:#fff;
@@ -19,7 +19,8 @@
 
   --TalbeRowColor:#c7c7c7;
 
-
+  --shadowBox: 0 0 6px 0 var(--TextPrimaryColor);
+  --shadowBoxActive:0px 5px 10px 0px var(--TextPrimaryColor);
 
 
 
@@ -52,8 +53,9 @@ body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: var(--BgColor);
 
-  color: black;
+  color: var(--TextPrimaryColor);
 }
 
 li{
@@ -61,11 +63,15 @@ li{
 }
 a{
   text-decoration: none;
-  color: black;
+  color: var(--TextPrimaryColor);
 
 }
-
+h1,h2,h3,h4,p{
+  color: var(--TextPrimaryColor);
+  margin: 0;
+}
 #root{
   display: flex;
   flex-direction: row;
+  overflow: hidden;
 }

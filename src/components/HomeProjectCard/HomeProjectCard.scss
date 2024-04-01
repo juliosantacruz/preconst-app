@@ -1,0 +1,41 @@
+.projectCard{
+  width: 230px;
+  height: 150px;
+
+  padding: 15px;
+
+  background: var(--BgAcentColor);
+  box-shadow: var(--shadowBox);
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title{
+      font-size: 18px;
+    }
+    .date{
+      font-size: 12px;
+    }
+  }
+  .content{
+    p{
+      font-size: 14px;
+    }
+  }
+
+  .footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .price{
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.Presupueto-Title{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--TextPrimaryColor);
+  margin-top: 15px;
+
+
+  .Project-Price{
+    font-style: italic;
+    font-weight: bold;
+  }
+}
