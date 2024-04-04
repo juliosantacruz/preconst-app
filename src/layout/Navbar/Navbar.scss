@@ -23,8 +23,19 @@
       }
     }
   }
+  :hover{
+    background-color:var(--BtnNavbarHoverColor);
+    color: var(--TextAcentColor);
 
+    .navIcon{
+      path{
+        stroke: var(--TextAcentColor);
+        // stroke-width: 2px;
+      }
+    }
+    }
 }
+
 
 nav {
   height: 100vh;

@@ -16,24 +16,24 @@ export default function CloseIcon({ className }: Props) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_25_345)">
+      <g clipPath="url(#clip0_25_345)">
         <path
           d="M18.0312 18.0312C20.9602 15.1023 20.9602 10.3535 18.0312 7.4246C15.1023 4.49567 10.3536 4.49567 7.42464 7.4246C4.49571 10.3535 4.49571 15.1023 7.42464 18.0312C10.3536 20.9601 15.1023 20.9601 18.0312 18.0312Z"
           stroke="#3F3F46"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M10.6066 10.6066L14.8493 14.8492"
           stroke="#3F3F46"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M10.6066 14.8492L14.8493 10.6066"
           stroke="#3F3F46"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>

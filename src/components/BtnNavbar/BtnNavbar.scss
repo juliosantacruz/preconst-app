@@ -10,12 +10,11 @@
 
   font-size: 14px;
   letter-spacing: .2px;
-
 }
 
 .active{
   color: var(--TextAcentColor);
-  background-color: var(--BtnPrimaryColor);
+  background-color: var(--BtnNavbarColor);
   font-weight: bold;
   box-shadow: var(--shadowBoxActive);
 
