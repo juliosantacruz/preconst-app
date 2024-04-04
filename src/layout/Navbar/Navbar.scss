@@ -23,7 +23,8 @@
       }
     }
   }
-  :hover{
+
+  :not(.active):hover{
     background-color:var(--BtnNavbarHoverColor);
     color: var(--TextAcentColor);
 

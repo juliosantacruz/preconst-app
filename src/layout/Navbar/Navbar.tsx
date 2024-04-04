@@ -19,6 +19,12 @@ import NavbarProjectTitle from "@/components/NavbarProjectTitle/NavbarProjectTit
 import NavbarFooter from "@/components/NavbarFooter/NavbarFooter";
 
 export default function Navbar() {
+  const LeProject = {
+    name: "Proyecto1",
+    active: true,
+  };
+  const isProjectActive = LeProject.active ? true : false;
+
   console.log(RoutesDirectory);
 
   return (
@@ -74,96 +80,105 @@ export default function Navbar() {
           </NavLink>
         </li>
       </ul>
+      {isProjectActive ? (
+        <>
+          <NavbarProjectTitle />
+          <ul className="asideNavbar">
+            <li>
+              <NavLink
+                className="navLink"
+                to={RoutesDirectory.PRESUPUESTO.slug}
+              >
+                {({ isActive }) => (
+                  <NavBtn isActive={isActive}>
+                    <span className="icon">
+                      <PresupuestoObraIcon className="navIcon" />
+                    </span>
+                    {RoutesDirectory.PRESUPUESTO.name}
+                  </NavBtn>
+                )}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="navLink"
+                to={RoutesDirectory.LISTADO_INSUMOS.slug}
+              >
+                {({ isActive }) => (
+                  <NavBtn isActive={isActive}>
+                    <span className="icon">
+                      <ListadoInsumosIcon className="navIcon" />
+                    </span>
+                    {RoutesDirectory.LISTADO_INSUMOS.name}
+                  </NavBtn>
+                )}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="navLink"
+                to={RoutesDirectory.LISTADO_CONCEPTOS.slug}
+              >
+                {({ isActive }) => (
+                  <NavBtn isActive={isActive}>
+                    <span className="icon">
+                      <ListadoConceptosIcon className="navIcon" />
+                    </span>
+                    {RoutesDirectory.LISTADO_CONCEPTOS.name}
+                  </NavBtn>
+                )}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="navLink"
+                to={RoutesDirectory.EXPLOSION_INSUMOS.slug}
+              >
+                {({ isActive }) => (
+                  <NavBtn isActive={isActive}>
+                    <span className="icon">
+                      <ExplosionInsumosIcon className="navIcon" />
+                    </span>
+                    {RoutesDirectory.EXPLOSION_INSUMOS.name}
+                  </NavBtn>
+                )}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="navLink"
+                to={RoutesDirectory.ANALISIS_PU.slug}
+              >
+                {({ isActive }) => (
+                  <NavBtn isActive={isActive}>
+                    <span className="icon">
+                      <AnalisisPUIcon className="navIcon" />
+                    </span>
+                    {RoutesDirectory.ANALISIS_PU.name}
+                  </NavBtn>
+                )}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="navLink"
+                to={RoutesDirectory.PROGRAMACION_OBRA.slug}
+              >
+                {({ isActive }) => (
+                  <NavBtn isActive={isActive}>
+                    <span className="icon">
+                      <ProgramacionObraIcon className="navIcon" />
+                    </span>
+                    {RoutesDirectory.PROGRAMACION_OBRA.name}
+                  </NavBtn>
+                )}
+              </NavLink>
+            </li>
+          </ul>
+        </>
+      ) : null}
 
-      <NavbarProjectTitle />
-      <ul className="asideNavbar">
-        <li>
-          <NavLink className="navLink" to={RoutesDirectory.PRESUPUESTO.slug}>
-            {({ isActive }) => (
-              <NavBtn isActive={isActive}>
-                <span className="icon">
-                  <PresupuestoObraIcon className="navIcon" />
-                </span>
-                {RoutesDirectory.PRESUPUESTO.name}
-              </NavBtn>
-            )}
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className="navLink"
-            to={RoutesDirectory.LISTADO_INSUMOS.slug}
-          >
-            {({ isActive }) => (
-              <NavBtn isActive={isActive}>
-                <span className="icon">
-                  <ListadoInsumosIcon className="navIcon" />
-                </span>
-                {RoutesDirectory.LISTADO_INSUMOS.name}
-              </NavBtn>
-            )}
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className="navLink"
-            to={RoutesDirectory.LISTADO_CONCEPTOS.slug}
-          >
-            {({ isActive }) => (
-              <NavBtn isActive={isActive}>
-                <span className="icon">
-                  <ListadoConceptosIcon className="navIcon" />
-                </span>
-                {RoutesDirectory.LISTADO_CONCEPTOS.name}
-              </NavBtn>
-            )}
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className="navLink"
-            to={RoutesDirectory.EXPLOSION_INSUMOS.slug}
-          >
-            {({ isActive }) => (
-              <NavBtn isActive={isActive}>
-                <span className="icon">
-                  <ExplosionInsumosIcon className="navIcon" />
-                </span>
-                {RoutesDirectory.EXPLOSION_INSUMOS.name}
-              </NavBtn>
-            )}
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className="navLink" to={RoutesDirectory.ANALISIS_PU.slug}>
-            {({ isActive }) => (
-              <NavBtn isActive={isActive}>
-                <span className="icon">
-                  <AnalisisPUIcon className="navIcon" />
-                </span>
-                {RoutesDirectory.ANALISIS_PU.name}
-              </NavBtn>
-            )}
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className="navLink"
-            to={RoutesDirectory.PROGRAMACION_OBRA.slug}
-          >
-            {({ isActive }) => (
-              <NavBtn isActive={isActive}>
-                <span className="icon">
-                  <ProgramacionObraIcon className="navIcon" />
-                </span>
-                {RoutesDirectory.PROGRAMACION_OBRA.name}
-              </NavBtn>
-            )}
-          </NavLink>
-        </li>
-      </ul>
-
-      <NavbarFooter/>
+      <NavbarFooter />
     </nav>
   );
 }
