@@ -1,46 +1,55 @@
-.TableSection{
+.Presupuesto-Btn-Group {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.TableSection {
   overflow-y: visible;
 
-  .PresupuestoTable{
+  .PresupuestoTable {
     font-size: 14px;
     border-collapse: collapse;
 
-    td,th{
+    td,
+    th {
       // border: 1px solid black;
       padding: 10px 0;
     }
-    tr{
+    tr {
       border-bottom: 1px solid var(--TalbeRowColor);
     }
-    .rowIcon{
+    .rowIcon {
       width: 30px;
       text-align: center;
     }
 
-    .clave{
+    .clave {
       width: 60px;
       text-align: center;
     }
-    .description{}
+    .description {
+    }
 
-    .unit{
+    .unit {
       width: 60px;
       text-align: center;
     }
-    .quantity{
+    .quantity {
       width: 100px;
       text-align: center;
     }
-    .price{
-      width: 100px;
-      text-align: center;
-
-    }
-    .amount{
+    .price {
       width: 100px;
       text-align: center;
     }
-    .actions{
+    .amount {
+      width: 100px;
+      text-align: center;
+    }
+    .actions {
       width: 100px;
       text-align: center;
     }

@@ -1,16 +1,23 @@
 import ProjectTitle from '@/components/ProjectTitle/ProjectTitle'
 import React from 'react'
 import './Presupuesto.scss'
+import BtnWorkspace from '@/components/BtnWorkspace/BtnWorkspace'
+import GuardarJSON from '@/assets/icons/navbar/GuardarJSON'
+import GuardarCSV from '@/assets/icons/navbar/GuardarCSV'
+import EditarProyecto from '@/assets/icons/navbar/EditarProyecto'
+import AgregarPartida from '@/assets/icons/navbar/AgregarPartida'
+import AgregarFSR from '@/assets/icons/navbar/AgregarFSR'
 
 export default function Presupuesto() {
   return (
     <>
       <div className="Presupuesto-Btn-Group">
-        <button>Guardar JSON</button>
-        <button>Guardar CSV</button>
-        <button>Editar Proyecto</button>
-        <button>Agregar Partida</button>
-        <button>Aplicar FSR</button>
+      <BtnWorkspace title='Guardar JSON' icon={<GuardarJSON/>}/>
+      <BtnWorkspace title='Guardar CSV' icon={<GuardarCSV/>}/>
+      <BtnWorkspace title='Editar Proyecto' icon={<EditarProyecto/>}/>
+      <BtnWorkspace title='Agregar Partida' icon={<AgregarPartida/>}/>
+      <BtnWorkspace title='Aplicar FSR' icon={<AgregarFSR/>} width={120}/>
+
       </div>
     <ProjectTitle/>
 
