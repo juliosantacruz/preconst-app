@@ -1,0 +1,82 @@
+.newInsumo {
+  background-color: white;
+  padding: 24px;
+  border-radius: 20px;
+
+  .form_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    h4 {
+      font-size: 28px;
+      font-weight: 400;
+      margin: 0;
+    }
+    button {
+      background: none;
+      border: none;
+    }
+  }
+
+  .form_content {
+    .textInput {
+      border-radius: 4px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+
+      .leInput {
+        font-size: 16px;
+        height: 30px;
+        background: white;
+        // width: 100%;
+        padding: 20px 0 0 8px;
+        text-overflow: ellipsis;
+        border-radius: 8px;
+        border: 1px solid var(--TitleRowColor);
+        color: var(--TextPrimaryColor);
+        margin-top: 8px;
+      }
+      .leLabel {
+        font-size: 12px;
+      }
+      .textArea {
+        padding: 10px 0 0 8px !important;
+        height: 100px !important;
+      }
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+
+      .btnForm {
+        height: 50px;
+        width: 220px;
+        display: flex;
+        font-size: 18px;
+
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        .btnIcon {
+          path {
+            stroke: var(--TextAcentColor);
+          }
+        }
+      }
+
+      .btnCancel {
+        background-color: var(--BtnDeleteColor);
+        border-radius: 8px;
+      }
+      .btnSave {
+        background-color: var(--BtnSaveColor);
+        border-radius: 8px;
+      }
+    }
+  }
+}
