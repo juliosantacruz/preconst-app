@@ -1,0 +1,29 @@
+.InputText {
+  width:100%;
+  // max-width: 450px;
+  // position: relative;
+  // border: 1px solid #9da3a6;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+
+
+  .input {
+    font-size: 16px;
+    height: 30px;
+    background: white;
+    // width: 100%;
+    padding: 20px 0 0 8px;
+    text-overflow: ellipsis;
+    border-radius: 8px;
+    border: 1px solid var(--TitleRowColor);
+    color: var(--TextPrimaryColor);
+    margin-top: 8px;
+  }
+  .label{
+    font-size: 12px;
+
+  }
+
+}

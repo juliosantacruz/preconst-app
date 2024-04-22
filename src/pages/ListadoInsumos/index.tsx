@@ -1,11 +1,13 @@
-import FormNewProject from '@/utils/forms/FormNewProject/FormNewProject'
-import React from 'react'
+import FormNewProject from "@/forms/FormNewProject/FormNewProject";
+import React from "react";
+import "./ListadoInsumos.scss";
 
 export default function ListadoInsumos() {
   return (
-    <div>
-      <FormNewProject />
-
-    </div>
-  )
+    <section className="ListadoInsumos">
+      <div className="formTest">
+        <FormNewProject />
+      </div>
+    </section>
+  );
 }
