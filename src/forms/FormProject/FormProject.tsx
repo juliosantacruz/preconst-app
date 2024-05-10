@@ -1,11 +1,11 @@
 import React from "react";
-import './FormNewProject.scss'
+import './FormProject.scss'
 import CloseIcon from "@/assets/icons/navbar/CloseIcon";
 import CheckIcon from "@/assets/icons/navbar/CheckIcon";
 import CancelIcon from "@/assets/icons/navbar/CancelIcon";
 
 
-export default function FormNewProject() {
+export default function FormProject() {
   return (
     <div className="newProject">
       <div className="form_header">

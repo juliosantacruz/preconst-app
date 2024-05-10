@@ -24,6 +24,15 @@
     .rowIcon {
       width: 30px;
       text-align: center;
+      .btnAction {
+        border: none;
+        background: none;
+        padding: 3px;
+        cursor: pointer;
+        :hover {
+          border-bottom: 1px solid var(--TitleRowColor);
+        }
+      }
     }
 
     .clave {
@@ -37,7 +46,7 @@
       width: 60px;
       text-align: center;
     }
-    .quantity {
+    .quantityrfc {
       width: 100px;
       text-align: center;
     }
@@ -52,6 +61,21 @@
     .actions {
       width: 100px;
       text-align: center;
+    }
+
+    tr.partida,
+    tr.concepto {
+      .actions {
+        .btnAction {
+          border: none;
+          background: none;
+          padding: 3px;
+          cursor: pointer;
+          :hover {
+            border-bottom: 1px solid var(--TitleRowColor);
+          }
+        }
+      }
     }
   }
 }

@@ -37,5 +37,33 @@
     .price{
       font-weight: bold;
     }
+    .btn-group{
+      display: flex;
+      gap: 10px;
+      button{
+        border: none;
+        border-radius: 4px;
+      }
+      .deleteBtn{
+        background-color: var(--BtnDeleteColor);
+        padding: 2px 8px;
+
+        cursor: pointer;
+
+        svg{
+          path{stroke: white;}
+        }
+      }
+      .editBtn{
+        background-color: var(--BtnPrimaryColor);
+        padding: 2px 8px;
+
+        cursor: pointer;
+
+        svg{
+          path{stroke: white;}
+        }
+      }
+    }
   }
 }

@@ -1,22 +1,17 @@
-import React, { useState } from 'react'
-import './BtnAddProject.scss'
+import React from "react";
+import "./BtnAddProject.scss";
+import { useUxStore } from "@/store/uxStore";
 export default function BtnAddProject() {
-  const [viewForm, setViewForm] = useState(false);
+  const { openModalFormProject } = useUxStore();
 
   const handleAddBtn = () => {
-    setViewForm(true);
+    openModalFormProject(true);
   };
   return (
     <>
       <div className="addBtn">
         <button onClick={handleAddBtn}>+</button>
       </div>
-
-      {viewForm && (
-        <div className="formContainer">
-          {/* <CotizacionForm modal={{ viewForm, setViewForm }} /> */}
-        </div>
-      )}
     </>
   );
 }

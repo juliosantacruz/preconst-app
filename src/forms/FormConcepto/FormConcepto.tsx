@@ -58,7 +58,7 @@ export default function FormConcepto() {
                 <td>MT.0001</td>
                 <td>MATERIAL 1</td>
                 <td>M3</td>
-                <td>2.12</td>
+                <td><input type="text" className="tableInput"/></td>
                 <td>12,321.23</td>
                 <td>EDT | DEL</td>
               </tr>
@@ -66,7 +66,7 @@ export default function FormConcepto() {
                 <td>MT.0002</td>
                 <td>MATERIAL 2</td>
                 <td>M3</td>
-                <td>2.12</td>
+                <td><input type="text" className="tableInput"/></td>
                 <td>12,321.23</td>
                 <td>EDT | DEL</td>
               </tr>

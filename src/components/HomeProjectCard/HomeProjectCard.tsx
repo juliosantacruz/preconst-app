@@ -1,5 +1,8 @@
 import React from 'react'
 import './HomeProjectCard.scss'
+import TrashIcon from '@/assets/icons/general/TrashIcon'
+import EditIcon from '@/assets/icons/general/EditIcon'
+import BtnAction from '@/components/BtnAction/BtnAction'
 
 export default function HomeProjectCard() {
   return (
@@ -18,10 +21,13 @@ export default function HomeProjectCard() {
           $12,245,231,00
         </p>
         <div className="btn-group">
-          <button>dele</button>
-          <button>edit</button>
+          <BtnAction icon={<TrashIcon/>} className='deleteBtn'/>
+          <BtnAction icon={<EditIcon/>} className='editBtn'/>
+
         </div>
       </div>
     </article>
   )
 }
+
+

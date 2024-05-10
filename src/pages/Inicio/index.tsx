@@ -5,6 +5,9 @@ import BannerImg from "@/assets/img/banner-img.png";
 import HomeTitle from "@/components/HomeTitle/HomeTitle";
 import HomeProjectCard from "@/components/HomeProjectCard/HomeProjectCard";
 import "./Inicio.scss";
+import AsideModal from "@/components/AsideModal";
+import FormProject from "@/forms/FormProject/FormProject";
+import { useUxStore } from "@/store/uxStore";
 
 const bannerData = {
   image: BannerImg,
@@ -14,6 +17,8 @@ const bannerData = {
 };
 
 export default function Inicio() {
+  const { modalFormProject, openModalFormProject } = useUxStore();
+
   return (
     <>
       <section>
@@ -35,6 +40,19 @@ export default function Inicio() {
           <HomeProjectCard />
         </div>
       </section>
+
+      {modalFormProject && (
+        <AsideModal
+          widthModal={"50vw"}
+          title="Agregar Proyecto"
+          clossable={true}
+          openModal={modalFormProject}
+          setOpenModal={openModalFormProject}
+          modalType={"Presupuesto"}
+        >
+          <FormProject />
+        </AsideModal>
+      )}
 
       <BtnAddProject />
     </>
