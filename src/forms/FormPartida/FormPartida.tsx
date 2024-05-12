@@ -3,13 +3,16 @@ import CheckIcon from '@/assets/icons/navbar/CheckIcon'
 import CloseIcon from '@/assets/icons/navbar/CloseIcon'
 import React from 'react'
 import './FormPartida.scss'
+import { useUxStore } from '@/store/uxStore'
 
 export default function FormPartida() {
+  const {  openModalFormPartida } = useUxStore();
+
   return (
     <div className='newPartida'>
       <div className="form_header">
         <h4>Informacion de Partida</h4>
-        <button>
+        <button onClick={()=>openModalFormPartida(false)}>
           <CloseIcon/>
         </button>
       </div>

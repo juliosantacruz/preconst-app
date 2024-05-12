@@ -3,14 +3,17 @@ import './FormProject.scss'
 import CloseIcon from "@/assets/icons/navbar/CloseIcon";
 import CheckIcon from "@/assets/icons/navbar/CheckIcon";
 import CancelIcon from "@/assets/icons/navbar/CancelIcon";
+import { useUxStore } from "@/store/uxStore";
 
 
 export default function FormProject() {
+  const {  openModalFormProject } = useUxStore();
+
   return (
     <div className="newProject">
       <div className="form_header">
         <h4>Informacion de Proyecto</h4>
-        <button>
+        <button onClick={()=>openModalFormProject(false)}>
           <CloseIcon/>
         </button>
       </div>

@@ -12,15 +12,21 @@ import TrashIcon from "@/assets/icons/general/TrashIcon";
 import EditIcon from "@/assets/icons/general/EditIcon";
 import AddNew from "@/assets/icons/general/AddNew";
 import ChevronIcon from "@/assets/icons/general/ChevronIcon";
+import AsideModal from "@/components/AsideModal";
+import { useUxStore } from "@/store/uxStore";
+import FormProject from "@/forms/FormProject/FormProject";
+import FormPartida from "@/forms/FormPartida/FormPartida";
 
 export default function Presupuesto() {
+  const { modalFormProject, openModalFormProject,modalFormPartida, openModalFormPartida } = useUxStore();
+
   return (
     <>
       <div className="Presupuesto-Btn-Group">
         <BtnWorkspace title="Guardar JSON" icon={<GuardarJSON />} />
         <BtnWorkspace title="Guardar CSV" icon={<GuardarCSV />} />
-        <BtnWorkspace title="Editar Proyecto" icon={<EditarProyecto />} />
-        <BtnWorkspace title="Agregar Partida" icon={<AgregarPartida />} />
+        <BtnWorkspace title="Editar Proyecto" icon={<EditarProyecto />} onClick={()=>openModalFormProject(!modalFormProject)} />
+        <BtnWorkspace title="Agregar Partida" icon={<AgregarPartida />} onClick={()=>openModalFormPartida(!modalFormPartida)}/>
         <BtnWorkspace title="Aplicar FSR" icon={<AgregarFSR />} width={120} />
       </div>
       <ProjectTitle />
@@ -321,6 +327,32 @@ export default function Presupuesto() {
           </tbody>
         </table>
       </div>
+
+
+      {modalFormProject && (
+        <AsideModal
+          widthModal={"30vw"}
+          title="Agregar Proyecto"
+          clossable={true}
+          openModal={modalFormProject}
+          setOpenModal={openModalFormProject}
+          modalType={"Presupuesto"}
+        >
+          <FormProject />
+        </AsideModal>
+      )}
+       {modalFormPartida && (
+        <AsideModal
+          widthModal={"30vw"}
+          title="Agregar Proyecto"
+          clossable={true}
+          openModal={modalFormPartida}
+          setOpenModal={openModalFormPartida}
+          modalType={"Partida"}
+        >
+          <FormPartida />
+        </AsideModal>
+      )}
     </>
   );
 }

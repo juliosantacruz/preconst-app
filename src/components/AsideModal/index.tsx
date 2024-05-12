@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import "./AsideModal.scss";
 
 import { ReactNode } from "react";
@@ -52,14 +53,14 @@ export default function AsideModal(Props: AsideProps) {
       style={{ width: widthModal, backgroundColor:bgColor }}
 
     >
-      <div className="header" >
+      {/* <div className="header" >
         <h3 >{title}</h3>
         {clossable && (
           <button className="closeIconBtn" onClick={() => setOpenModal(false)}>
-            {/* <AnyIcon iconSrc={closeIcon} iconWidth={30} iconHeight={30} /> */} x
+          x
           </button>
         )}
-      </div>
+      </div> */}
       <div className="body">
 
       {children}
