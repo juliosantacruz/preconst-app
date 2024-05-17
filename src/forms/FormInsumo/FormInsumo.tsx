@@ -3,14 +3,16 @@ import CheckIcon from '@/assets/icons/navbar/CheckIcon'
 import CloseIcon from '@/assets/icons/navbar/CloseIcon'
 import React from 'react'
 import './FormInsumo.scss'
+import { useUxStore } from '@/store/uxStore'
 
 
 export default function FormInsumo() {
+  const {openModalFormInsumo} = useUxStore()
   return (
     <div className='newInsumo'>
       <div className="form_header">
         <h4>Informacion de Insumo</h4>
-        <button>
+        <button onClick={()=>openModalFormInsumo(false)}>
           <CloseIcon/>
         </button>
       </div>

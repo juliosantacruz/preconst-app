@@ -1,11 +1,13 @@
 import React from "react";
 import "./BtnAddProject.scss";
-import { useUxStore } from "@/store/uxStore";
-export default function BtnAddProject() {
-  const { openModalFormProject } = useUxStore();
+
+type Props={
+  openModal:(value:boolean)=>void
+}
+export default function BtnAddProject({openModal}:Props) {
 
   const handleAddBtn = () => {
-    openModalFormProject(true);
+    openModal(true);
   };
   return (
     <>

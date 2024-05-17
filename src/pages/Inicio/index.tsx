@@ -54,7 +54,7 @@ export default function Inicio() {
         </AsideModal>
       )}
 
-      <BtnAddProject />
+      <BtnAddProject openModal={openModalFormProject}/>
     </>
   );
 }
