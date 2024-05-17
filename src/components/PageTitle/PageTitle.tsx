@@ -9,7 +9,7 @@ type Props={
 }
 export default function PageTitle({title, children}:Props) {
   return (
-    <div className='HomeTitle'>
+    <div className='PageTitle'>
       <h2>{title}</h2>
       <div className="rightSide">
         {children}

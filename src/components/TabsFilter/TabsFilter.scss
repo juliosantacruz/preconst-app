@@ -1,0 +1,22 @@
+.tabsFiltred {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  height: 30px;
+  // border-bottom: 1px solid black;
+  .tab {
+      padding: 0 10px;
+      border: 1px solid rgb(155, 155, 155);
+      border-bottom: none;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      background: #f0f0f0;
+      color: black;
+      margin: 0 2px;
+  }
+  .active {
+      background: #fff;
+      border-bottom:1px solid rgb(255, 255, 255)
+  }
+}

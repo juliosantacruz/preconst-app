@@ -1,0 +1,18 @@
+.PageTitle{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--TitleRowColor);
+  margin-top: 15px;
+
+  button{
+    height: 100%;
+  }
+}
+
+.rightSide{
+  display: flex;
+  gap: 20px;
+}
