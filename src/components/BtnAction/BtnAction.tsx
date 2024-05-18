@@ -1,4 +1,6 @@
 import { ReactNode } from "react";
+import './BtnAction.scss'
+
 
 type BtnActionType = {
   className?: string;
@@ -8,7 +10,7 @@ type BtnActionType = {
 
 const BtnAction = ({ icon, onClick, className }: BtnActionType) => {
   return (
-    <button className={className ? className : ""} onClick={onClick}>
+    <button className={className ? `btnAction ${className}` : "btnAction"} onClick={onClick}>
       {icon}
     </button>
   );

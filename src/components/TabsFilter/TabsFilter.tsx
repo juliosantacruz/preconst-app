@@ -19,7 +19,7 @@ export default function TabsFilter() {
 
   const tabClassName = (category?: string) => {
     if (filter === category) {
-      return "tab active";
+      return "tab activeTab";
     } else {
       return "tab";
     }
@@ -29,7 +29,7 @@ export default function TabsFilter() {
       <div className="tabsFiltred">
         <button
           type="button"
-          className={filter === "todos" ? "tab active" : "tab"}
+          className={filter === "todos" ? "tab activeTab" : "tab"}
           onClick={() => setFilter("todos")}
         >
           Todos

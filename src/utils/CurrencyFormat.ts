@@ -3,12 +3,11 @@ export function setFormat(amount:number){
         style: 'currency',
         currency:'USD'
     }).format(amount)
-    
-    
+
+
 
 
 
     return amountFormated
 }
 
- 
