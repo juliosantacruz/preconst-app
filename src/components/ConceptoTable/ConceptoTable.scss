@@ -1,0 +1,50 @@
+.ConceptoTable {
+  font-size: 14px;
+  border-collapse: collapse;
+  background: white;
+  // border-top: 1px solid var(--TalbeRowColor);
+
+  thead {
+    .description {
+      text-align: left;
+    }
+  }
+  td,
+  th {
+    // border: 1px solid black;
+    padding: 10px 0;
+  }
+  tr {
+    border-bottom: 1px solid var(--TalbeRowColor);
+  }
+
+  .clave {
+    width: 60px;
+    text-align: center;
+  }
+  .description {
+    width: 350px;
+    // text-align: center;
+  }
+
+  .unit {
+    width: 60px;
+    text-align: center;
+  }
+  .quantityrfc {
+    width: 100px;
+    text-align: center;
+  }
+  .price {
+    width: 100px;
+    text-align: center;
+  }
+  .category {
+    width: 100px;
+    text-align: center;
+  }
+  .actions {
+    width: 100px;
+    text-align: center;
+  }
+}

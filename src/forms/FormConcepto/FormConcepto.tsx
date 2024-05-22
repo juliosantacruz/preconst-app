@@ -3,13 +3,16 @@ import CheckIcon from "@/assets/icons/navbar/CheckIcon";
 import CloseIcon from "@/assets/icons/navbar/CloseIcon";
 import React from "react";
 import "./FormConcepto.scss";
+import { useUxStore } from "@/store/uxStore";
 
 export default function FormConcepto() {
+  const { openModalFormConcepto} = useUxStore();
+
   return (
     <div className="newInsumo">
       <div className="form_header">
         <h4>Informacion de Concepto</h4>
-        <button>
+        <button onClick={()=>openModalFormConcepto(false)}>
           <CloseIcon />
         </button>
       </div>
