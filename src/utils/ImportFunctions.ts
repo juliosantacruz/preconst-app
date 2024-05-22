@@ -1,22 +1,22 @@
 import { v4 } from "uuid";
-import {
-  useInsumoStore,
-  useConceptoStore,
-  usePresupuestoStore,
-} from "../store/projectStore";
+// import {
+//   useInsumoStore,
+//   useConceptoStore,
+//   usePresupuestoStore,
+// } from "../store/projectStore";
 import { Concepto } from "../types/Concepto";
 import { Insumo } from "../types/Insumo";
 import { ListadoConcepto, Partida, Presupuesto } from "../types/Presupuesto";
 import dayjs from "dayjs";
 
-const addPresupuesto = usePresupuestoStore.getState().addPresupuesto;
-// const presupuestos = usePresupuestoStore.getState().presupuestos;
+// const addPresupuesto = usePresupuestoStore.getState().addPresupuesto;
+// // const presupuestos = usePresupuestoStore.getState().presupuestos;
 
-const addConcepto = useConceptoStore.getState().addConcepto;
-// const conceptos = useConceptoStore.getState().conceptos;
+// const addConcepto = useConceptoStore.getState().addConcepto;
+// // const conceptos = useConceptoStore.getState().conceptos;
 
-const addInsumo = useInsumoStore.getState().addInsumo;
-const insumos = useInsumoStore.getState().insumos;
+// const addInsumo = useInsumoStore.getState().addInsumo;
+// const insumos = useInsumoStore.getState().insumos;
 
 export type ImportFile = {
   insumos?: Insumo[];
@@ -69,7 +69,7 @@ export const importFile = (obj: ImportFile) => {
 
     console.log("newPresupuesto", newPresupuesto);
     // console.log("dirConceptos", conceptosPresupuesto);
-    addPresupuesto(newPresupuesto)
+    // addPresupuesto(newPresupuesto)
   }
   // const newConceptos: Concepto[] = [];
   if (obj.conceptos) {
@@ -86,22 +86,25 @@ export const importFile = (obj: ImportFile) => {
         id: newId,
         proyectoId: newProyectId,
       };
+      console.log(newConcepto);
       //newConceptos.push(newConcepto);
-      addConcepto(newConcepto)
+      // addConcepto(newConcepto)
     });
   }
-  
+
   // console.log("newConceptos", newConceptos);
 
-  if(obj.insumos){
-    const data = obj.insumos
-    data.map((uploadInsumo)=>{
-
-      const findInsumo=insumos.find((oldInsumo)=>oldInsumo.id===uploadInsumo.id)
-      if(!findInsumo){
-        addInsumo(uploadInsumo)
+  if (obj.insumos) {
+    const data = obj.insumos;
+    data.map((uploadInsumo) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const insumos:any=[]
+      const findInsumo = insumos.find(
+        (oldInsumo:Insumo) => oldInsumo.id === uploadInsumo.id
+      );
+      if (!findInsumo) {
+        // addInsumo(uploadInsumo)
       }
-    })
-     
+    });
   }
 };
