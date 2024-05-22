@@ -1,0 +1,122 @@
+{
+    "presupuesto": {
+        "id": "72f09967-a38a-4525-8673-578b600c46be",
+        "fechaCreacion": "2023-08-30, 8:12:27 PM",
+        "nombreProyecto": "test",
+        "descripcionProyecto": "",
+        "domicilioProyecto": "",
+        "clienteProyecto": "",
+        "partidas": [
+            {
+                "id": "9c9909f5-b34e-42d2-90c3-c45b3ea636e8",
+                "clave": "A",
+                "nombre": "Preliminares",
+                "montoPartida": 1708.8,
+                "listadoConceptos": [
+                    {
+                        "conceptoId": "bd305bed-d430-430a-9022-140a79d3c132",
+                        "cantidad": "43",
+                        "fechaCreacion": "e21d8490-8db7-4170-ad9e-d8adedd415df"
+                    },
+                    {
+                        "conceptoId": "4f98750e-2040-4402-8a8c-57153cfcebdf",
+                        "cantidad": "0.5",
+                        "fechaCreacion": "19866d86-bc3c-45de-9544-2b2d938c8800"
+                    },
+                    {
+                        "conceptoId": "0477af61-817b-4d65-a847-507eb1cf0afd",
+                        "cantidad": ".60",
+                        "fechaCreacion": "a32dd6dd-c388-4782-8eee-f8f6dbdb619b"
+                    }
+                ]
+            }
+        ],
+        "fsc": {
+            "costoIndirecto": 0,
+            "costoOperativo": 0,
+            "financiamiento": 0,
+            "utilidad": 0,
+            "iva": 0,
+            "isr": 0
+        },
+        "montoTotal": 1428,
+        "workingPartida": {
+            "id": "",
+            "clave": "",
+            "nombre": "",
+            "montoPartida": 0,
+            "listadoConceptos": []
+        }
+    },
+    "conceptos": [
+        {
+            "id": "bd305bed-d430-430a-9022-140a79d3c132",
+            "proyectoId": "72f09967-a38a-4525-8673-578b600c46be",
+            "fechaCreacion": "2023-08-30, 8:12:37 PM",
+            "clave": "A1",
+            "descripcion": "asdfasdfasd asdfas asdf",
+            "unidad": "kg",
+            "listadoInsumos": [
+                {
+                    "insumoId": "ce29694d-fd6b-4e1b-b7ed-d8c6bd9f6e5c",
+                    "cantidad": 2
+                }
+            ],
+            "precioUnitario": 28
+        },
+        {
+            "id": "4f98750e-2040-4402-8a8c-57153cfcebdf",
+            "proyectoId": "72f09967-a38a-4525-8673-578b600c46be",
+            "fechaCreacion": "2023-08-31, 10:07:36 PM",
+            "clave": "A2",
+            "descripcion": " ;lakdjf;alkdjf ;alkdjf;lakdjf;lak dfj;akdjf ;aksdjf;lkajdf;lkjasd flakdjfasdf",
+            "unidad": "Jor",
+            "listadoInsumos": [
+                {
+                    "insumoId": "19804ff8-b74a-4806-b6cd-a5bb3cd4a0ad",
+                    "cantidad": 1
+                },
+                {
+                    "insumoId": "ce29694d-fd6b-4e1b-b7ed-d8c6bd9f6e5c",
+                    "cantidad": 1
+                },
+                {
+                    "insumoId": "57e1b9ec-8bee-4782-bf28-5b6d3b2f1363",
+                    "cantidad": 1
+                },
+                {
+                    "insumoId": "b3334d7c-c1c8-4247-b69a-68f1ae713f18",
+                    "cantidad": 1
+                }
+            ],
+            "precioUnitario": 448
+        },
+        {
+            "id": "0477af61-817b-4d65-a847-507eb1cf0afd",
+            "proyectoId": "72f09967-a38a-4525-8673-578b600c46be",
+            "fechaCreacion": "2023-08-31, 10:08:09 PM",
+            "clave": "A3",
+            "descripcion": "asdfasd asdf asdf asdf asdf ",
+            "unidad": "kg",
+            "listadoInsumos": [
+                {
+                    "insumoId": "19804ff8-b74a-4806-b6cd-a5bb3cd4a0ad",
+                    "cantidad": 1
+                },
+                {
+                    "insumoId": "ce29694d-fd6b-4e1b-b7ed-d8c6bd9f6e5c",
+                    "cantidad": 1
+                },
+                {
+                    "insumoId": "57e1b9ec-8bee-4782-bf28-5b6d3b2f1363",
+                    "cantidad": 1
+                },
+                {
+                    "insumoId": "c8ead549-72c3-414d-bcaa-f7eb5c5f2646",
+                    "cantidad": 1
+                }
+            ],
+            "precioUnitario": 468
+        }
+    ]
+}

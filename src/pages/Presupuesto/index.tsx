@@ -16,6 +16,7 @@ import AsideModal from "@/components/AsideModal";
 import { useUxStore } from "@/store/uxStore";
 import FormProject from "@/forms/FormProject/FormProject";
 import FormPartida from "@/forms/FormPartida/FormPartida";
+import SearchBar from "@/components/SearchBar/SearchBar";
 
 export default function Presupuesto() {
   const { modalFormProject, openModalFormProject,modalFormPartida, openModalFormPartida } = useUxStore();
@@ -30,7 +31,7 @@ export default function Presupuesto() {
         <BtnWorkspace title="Aplicar FSR" icon={<AgregarFSR />} width={120} />
       </div>
       <ProjectTitle />
-
+      <SearchBar/>
       <div className="TableSection">
         <table className="PresupuestoTable">
           <thead>
@@ -91,58 +92,6 @@ export default function Presupuesto() {
                 Y EQUIPO, MANIOBRAS Y MOVIMIENTOS, MEDIDO TODO EN SECCIÓN, ASÍ
                 COMO TODO LO NECESARIO PARA LA CORRECTA EJECUCIÓN DE LOS
                 TRABAJOS.
-              </td>
-              <td className="unit">m3</td>
-              <td className="quantity">1,342.94</td>
-              <td className="price">$342.90</td>
-              <td className="amount">$460,494.13</td>
-              <td className="actions">
-                <BtnAction icon={<TrashIcon />} className="btnAction" />|
-                <BtnAction icon={<AddNew />} className="btnAction" />
-              </td>
-            </tr>
-            <tr className="concepto">
-              <td className="rowIcon"> </td>
-              <td className="clave">A3</td>
-              <td className="description">
-                EXCAVACIÓN A MÁQUINA EN MATERIAL TIPO "B" EN SECO HASTA UNA
-                PROFUNDIDAD DE 4.50 M CON MEDIDAS EN LÍNEAS DE PROYECTO.
-                INCLUYE: AFINE DE TALUDES, MANO DE OBRA, HERRAMIENTA, MAQUINARIA
-                Y EQUIPO, MANIOBRAS Y MOVIMIENTOS.
-              </td>
-              <td className="unit">m3</td>
-              <td className="quantity">1,342.94</td>
-              <td className="price">$342.90</td>
-              <td className="amount">$460,494.13</td>
-              <td className="actions">
-                <BtnAction icon={<TrashIcon />} className="btnAction" />|
-                <BtnAction icon={<AddNew />} className="btnAction" />
-              </td>
-            </tr>
-            <tr className="concepto">
-              <td className="rowIcon"> </td>
-              <td className="clave">A4</td>
-              <td className="description">
-                EXCAVACIÓN A MÁQUINA EN MATERIAL TIPO "B" EN SECO HASTA UNA
-                PROFUNDIDAD DE 4.50 M CON MEDIDAS EN LÍNEAS DE PROYECTO.
-              </td>
-              <td className="unit">m3</td>
-              <td className="quantity">1,342.94</td>
-              <td className="price">$234,342.90</td>
-              <td className="amount">$460,494.13</td>
-              <td className="actions">
-                <BtnAction icon={<TrashIcon />} className="btnAction" />|
-                <BtnAction icon={<AddNew />} className="btnAction" />
-              </td>
-            </tr>
-            <tr className="concepto">
-              <td className="rowIcon"> </td>
-              <td className="clave">A3</td>
-              <td className="description">
-                EXCAVACIÓN A MÁQUINA EN MATERIAL TIPO "B" EN SECO HASTA UNA
-                PROFUNDIDAD DE 4.50 M CON MEDIDAS EN LÍNEAS DE PROYECTO.
-                INCLUYE: AFINE DE TALUDES, MANO DE OBRA, HERRAMIENTA, MAQUINARIA
-                Y EQUIPO, MANIOBRAS Y MOVIMIENTOS.
               </td>
               <td className="unit">m3</td>
               <td className="quantity">1,342.94</td>
