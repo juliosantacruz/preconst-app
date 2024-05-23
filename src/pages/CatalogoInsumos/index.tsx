@@ -13,30 +13,9 @@ import AsideModal from "@/components/AsideModal";
 
 import { Insumo } from "@/types/Insumo";
 import InsumoTable from "@/components/InsumoTable/InsumoTable";
+import InsumosData from '@/mocks/mock_Insumos.json'
 
-const MockInsumos: Insumo[] = [
-  {
-    id: "1",
-    fechaCreacion: "12-23-1212",
-    clave: "MT.001",
-    descripcion:
-      "MATERIAL 1 adsf asdfa sdf asdfasdf asdfasdfasdfasdfasdfasdf asdfasdfasdfasdfsdafasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf",
-    unidad: "m3",
-    categoria: "Material",
-    isTarea: false,
-    precio: 34323.33,
-  },
-  {
-    id: "2",
-    fechaCreacion: "12-23-1212",
-    clave: "MT.002",
-    descripcion: "MATERIAL 2",
-    unidad: "kg",
-    categoria: "Material",
-    isTarea: false,
-    precio: 23.33,
-  },
-];
+const MockInsumos: Insumo[] = InsumosData
 
 export default function CatalogoInsumos() {
   const { openModalFormInsumo, modalFormInsumo } = useUxStore();

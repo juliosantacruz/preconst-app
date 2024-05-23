@@ -1,0 +1,48 @@
+.PresupuestoTable {
+  font-size: 14px;
+  border-collapse: collapse;
+
+  td,
+  th {
+    // border: 1px solid black;
+    padding: 10px 0;
+  }
+  tr {
+    border-bottom: 1px solid var(--TalbeRowColor);
+  }
+  .rowIcon {
+    width: 30px;
+    text-align: center;
+
+  }
+
+  .clave {
+    width: 60px;
+    text-align: center;
+  }
+  .description {
+  }
+
+  .unit {
+    width: 60px;
+    text-align: center;
+  }
+  .quantityrfc {
+    width: 100px;
+    text-align: center;
+  }
+  .price {
+    width: 100px;
+    text-align: center;
+  }
+  .amount {
+    width: 100px;
+    text-align: center;
+  }
+  .actions {
+    width: 100px;
+    text-align: center;
+  }
+
+
+}

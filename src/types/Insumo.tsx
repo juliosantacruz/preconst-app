@@ -13,7 +13,7 @@ export interface Insumo {
     unidad: string;
     categoria: string;
     isTarea?:boolean
-    precio: number;
+    precio: number|string;
 
   }
 
@@ -24,3 +24,5 @@ export interface Insumo {
     cantidadConcepto: number | undefined;
     conceptoId: string;
   }
+
+
