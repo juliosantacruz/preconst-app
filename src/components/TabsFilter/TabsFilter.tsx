@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { CategoriasInsumos } from '@/utils/SelectInputOptions';
 import './TabsFilter.scss'
 

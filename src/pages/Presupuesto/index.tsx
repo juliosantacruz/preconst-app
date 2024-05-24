@@ -1,5 +1,5 @@
 import ProjectTitle from "@/components/ProjectTitle/ProjectTitle";
-import React from "react";
+import React, { useState } from "react";
 import "./Presupuesto.scss";
 import BtnWorkspace from "@/components/BtnWorkspace/BtnWorkspace";
 import GuardarJSON from "@/assets/icons/general/GuardarJSON";
@@ -16,6 +16,8 @@ import SearchBar from "@/components/SearchBar/SearchBar";
 import PresupuestoTable from "@/components/PresupuestoTable/PresupuestoTable";
 
 export default function Presupuesto() {
+  const [searchValue, setSearchValue] = useState<string>("");
+
   const {
     modalFormProject,
     openModalFormProject,
@@ -41,7 +43,8 @@ export default function Presupuesto() {
         <BtnWorkspace title="Aplicar FSR" icon={<AgregarFSR />} width={120} />
       </div>
       <ProjectTitle />
-      <SearchBar />
+      <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/>
+
       <PresupuestoTable />
 
       {modalFormProject && (
