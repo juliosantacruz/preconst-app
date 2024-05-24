@@ -11,14 +11,13 @@ import { useUxStore } from "@/store/uxStore";
 import FormInsumo from "@/forms/FormInsumo/FormInsumo";
 import AsideModal from "@/components/AsideModal";
 
-import { Insumo } from "@/types/Insumo";
 import InsumoTable from "@/components/InsumoTable/InsumoTable";
-import InsumosData from '@/mocks/mock_Insumos.json'
+import { useInsumoStore } from "@/store/projectStore";
 
-const MockInsumos: Insumo[] = InsumosData
 
 export default function CatalogoInsumos() {
   const { openModalFormInsumo, modalFormInsumo } = useUxStore();
+  const {insumos}=useInsumoStore()
   return (
     <>
       <section>
@@ -28,7 +27,7 @@ export default function CatalogoInsumos() {
         </PageTitle>
         <SearchBar />
         <TabsFilter />
-        <InsumoTable insumoArray={MockInsumos} />
+        <InsumoTable insumoArray={insumos} />
       </section>
 
       {modalFormInsumo && (
