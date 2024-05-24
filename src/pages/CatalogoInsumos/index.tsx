@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CatalogoInsumos.scss";
 import PageTitle from "@/components/PageTitle/PageTitle";
 import BtnWorkspace from "@/components/BtnWorkspace/BtnWorkspace";
@@ -13,11 +13,39 @@ import AsideModal from "@/components/AsideModal";
 
 import InsumoTable from "@/components/InsumoTable/InsumoTable";
 import { useInsumoStore } from "@/store/projectStore";
+import { Insumo } from "@/types/Insumo";
 
 
 export default function CatalogoInsumos() {
-  const { openModalFormInsumo, modalFormInsumo } = useUxStore();
+  const [tabsFilter, setTabsFilter]=useState<string>('todos')
+  const [searchValue, setSearchValue] = useState<string>("");
   const {insumos}=useInsumoStore()
+  const { openModalFormInsumo, modalFormInsumo } = useUxStore();
+
+
+  const filtrarCategorias = (data: Insumo[], categoria: string) => {
+    let arrData: Insumo[] = [];
+    if (tabsFilter === "todos") {
+      arrData = data;
+    } else {
+      arrData = data.filter((insumo) => insumo.categoria === categoria);
+    }
+    arrData.sort((a, b) => a.clave.localeCompare(b.clave));
+    return arrData;
+  };
+
+  let searchedInsumos: Insumo[] = [];
+  if (searchValue.length > 0) {
+    searchedInsumos = insumos.filter((insumo) => {
+      const description = insumo.descripcion.toLocaleLowerCase();
+      const searchText = searchValue.toLowerCase();
+      return description.includes(searchText);
+    });
+  } else {
+    searchedInsumos = insumos;
+  }
+
+  const insumoData = filtrarCategorias(searchedInsumos, tabsFilter)
   return (
     <>
       <section>
@@ -25,9 +53,9 @@ export default function CatalogoInsumos() {
           <BtnWorkspace title="Guardar JSON" icon={<GuardarJSON />} />
           <BtnWorkspace title="Guardar CSV" icon={<GuardarCSV />} />
         </PageTitle>
-        <SearchBar />
-        <TabsFilter />
-        <InsumoTable insumoArray={insumos} />
+        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/>
+        <TabsFilter activeTab={tabsFilter} setTab={setTabsFilter} />
+        <InsumoTable insumoArray={insumoData} />
       </section>
 
       {modalFormInsumo && (

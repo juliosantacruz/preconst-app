@@ -1,24 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Insumo } from '@/types/Insumo';
 import { CategoriasInsumos } from '@/utils/SelectInputOptions';
-import React, { useState } from 'react'
 import './TabsFilter.scss'
 
-export default function TabsFilter() {
-  const [filter, setFilter] = useState("todos");
-  const filtrarCategorias = (data: Insumo[], categoria: string) => {
-    let arrData: Insumo[] = [];
-    if (filter === "todos") {
-      arrData = data;
-    } else {
-      arrData = data.filter((insumo) => insumo.categoria === categoria);
-    }
-    arrData.sort((a, b) => a.clave.localeCompare(b.clave));
-    return arrData;
-  };
+export default function TabsFilter({activeTab,setTab}:{activeTab:string,setTab:(value:string)=>void}) {
+
 
   const tabClassName = (category?: string) => {
-    if (filter === category) {
+    if (activeTab === category) {
       return "tab activeTab";
     } else {
       return "tab";
@@ -29,8 +17,8 @@ export default function TabsFilter() {
       <div className="tabsFiltred">
         <button
           type="button"
-          className={filter === "todos" ? "tab activeTab" : "tab"}
-          onClick={() => setFilter("todos")}
+          className={activeTab === "todos" ? "tab activeTab" : "tab"}
+          onClick={() => setTab("todos")}
         >
           Todos
         </button>
@@ -40,7 +28,7 @@ export default function TabsFilter() {
               key={category.name}
               type="button"
               className={tabClassName(category.name)}
-              onClick={() => setFilter(category.name)}
+              onClick={() => setTab(category.name)}
             >
               {category.name}
             </button>

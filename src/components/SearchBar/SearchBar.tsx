@@ -4,7 +4,7 @@ import './SearchBar.scss'
 
 type Props ={
     searchValue?:string;
-    setSearchValue?:(value:string)=>void
+    setSearchValue:(value:string)=>void
 }
 export default function SearchBar(props:Props) {
     const {searchValue, setSearchValue}=props
@@ -20,7 +20,7 @@ export default function SearchBar(props:Props) {
           className="searchInput"
           placeholder="Que buscas?"
           value={searchValue}
-          // onChange={(event)=>setSearchValue(event.target.value)}
+          onChange={(event)=>setSearchValue(event.target.value)}
         />
       </div>
     </>

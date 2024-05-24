@@ -33,11 +33,16 @@ const insumoDefaultValue = {
 
 export default function FormInsumo() {
   const [formData, setFormData] = useState<Insumo>(insumoDefaultValue);
+  const [editInsumo, setEditInsumo]=useState(false)
   const [formError, setFormError] = useState(false);
   const { openModalFormInsumo } = useUxStore();
-  const { addInsumo } = useInsumoStore();
+  const { addInsumo,insumoToUpdate,updateInsumo,setInsumoToUpdate } = useInsumoStore();
 
   useEffect(() => {
+    if (insumoToUpdate !== undefined) {
+      setFormData(insumoToUpdate);
+      setEditInsumo(true);
+    } else {
     setFormData({
       id: v4(),
       fechaCreacion: dayjs().format("YYYY-MM-DD, h:mm:ss A"),
@@ -49,6 +54,7 @@ export default function FormInsumo() {
       listadoInsumos: [],
       precio: "",
     });
+  }
   }, []);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -65,8 +71,11 @@ export default function FormInsumo() {
       return console.log("error de datos");
     }
 
-    console.log("se envia data: ", formData);
-    addInsumo(formData);
+    if (editInsumo) {
+      updateInsumo(formData);
+    } else {
+      addInsumo(formData);
+    }
     onClear();
   };
 
@@ -94,6 +103,9 @@ export default function FormInsumo() {
 
   const onClear = () => {
     setFormData(insumoDefaultValue);
+    setFormError(false);
+    setEditInsumo(false);
+    setInsumoToUpdate(undefined);
     openModalFormInsumo(false);
   };
 

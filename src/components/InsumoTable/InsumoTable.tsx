@@ -1,16 +1,30 @@
-import React from 'react'
+import React from "react";
 import "./TableInsumos.scss";
-import { setFormat } from '@/utils/CurrencyFormat';
-import { Insumo } from '@/types/Insumo';
+import { setFormat } from "@/utils/CurrencyFormat";
+import { Insumo } from "@/types/Insumo";
 import BtnAction from "@/components/BtnAction/BtnAction";
 import EditIcon from "@/assets/icons/general/EditIcon";
 import TrashIcon from "@/assets/icons/general/TrashIcon";
+import { useUxStore } from "@/store/uxStore";
+import { useInsumoStore } from "@/store/projectStore";
 
 type Props = {
   insumoArray: Insumo[];
 };
 
- const InsumoTable = ({ insumoArray }: Props) => {
+const InsumoTable = ({ insumoArray }: Props) => {
+  const { openModalFormInsumo } = useUxStore();
+  const { setInsumoToUpdate, deleteInsumo } = useInsumoStore();
+
+  const editInsumo = (element: Insumo) => {
+    setInsumoToUpdate(element);
+    openModalFormInsumo(true);
+  };
+
+  const handleDelete = (id: string) => {
+    deleteInsumo(id);
+  };
+
   return (
     <table className="TableInsumos">
       <thead>
@@ -35,8 +49,17 @@ type Props = {
                 <td className="price">{setFormat(Number(insumo.precio))}</td>
                 <td className="category">{insumo.categoria}</td>
                 <td className="actions">
-                  <BtnAction icon={<EditIcon />} className="btnAction" />|
-                  <BtnAction icon={<TrashIcon />} className="btnAction" />
+                  <BtnAction
+                    icon={<EditIcon />}
+                    onClick={() => editInsumo(insumo)}
+                    className="btnAction"
+                  />
+                  |
+                  <BtnAction
+                    icon={<TrashIcon />}
+                    onClick={() => handleDelete(insumo.id)}
+                    className="btnAction"
+                  />
                 </td>
               </tr>
             );
@@ -48,4 +71,4 @@ type Props = {
     </table>
   );
 };
-export default InsumoTable
+export default InsumoTable;
