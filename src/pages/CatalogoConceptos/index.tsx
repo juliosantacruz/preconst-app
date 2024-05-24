@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CatalogoConceptos.scss";
 import PageTitle from "@/components/PageTitle/PageTitle";
 import BtnWorkspace from "@/components/BtnWorkspace/BtnWorkspace";
@@ -37,6 +37,8 @@ const MockConcepto: Concepto[] = [
   },
 ];
 export default function CatalogoConceptos() {
+  const [searchValue, setSearchValue] = useState<string>("");
+
   const { openModalFormConcepto, modalFormConcepto} = useUxStore();
   return (
     <>
@@ -46,7 +48,8 @@ export default function CatalogoConceptos() {
           <BtnWorkspace title="Guardar CSV" icon={<GuardarCSV />} />
         </PageTitle>
 
-        <SearchBar />
+        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/>
+
 
         <ConceptoTable catalogoArray={MockConcepto} />
       </section>
