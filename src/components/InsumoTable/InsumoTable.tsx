@@ -26,13 +26,13 @@ type Props = {
       <tbody>
         {insumoArray.length ? (
           insumoArray.map((insumo) => {
-            console.log(insumo);
+            // console.log(insumo);
             return (
               <tr key={insumo.id}>
                 <td className="clave">{insumo.clave}</td>
                 <td className="description">{insumo.descripcion}</td>
                 <td className="unit">{insumo.unidad}</td>
-                <td className="price">{setFormat(insumo.precio)}</td>
+                <td className="price">{setFormat(Number(insumo.precio))}</td>
                 <td className="category">{insumo.categoria}</td>
                 <td className="actions">
                   <BtnAction icon={<EditIcon />} className="btnAction" />|

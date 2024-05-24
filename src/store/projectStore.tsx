@@ -41,7 +41,7 @@ export const useInsumoStore = create<InsumoState>()(
         })),
     }),
     {
-      name: "insumos-storage",
+      name: "insumos-store",
       storage: createJSONStorage(() => localStorage),
     }
   )

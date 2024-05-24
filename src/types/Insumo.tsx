@@ -1,3 +1,4 @@
+import { ListadoInsumos } from "./Concepto";
 
 export interface PrecioProyectos{
   proyectoId:string,
@@ -12,7 +13,9 @@ export interface Insumo {
     descripcion: string;
     unidad: string;
     categoria: string;
-    isTarea?:boolean
+    isTarea?:boolean;
+    listadoInsumos?: ListadoInsumos[]
+    proyectoId?:string;
     precio: number|string;
 
   }
