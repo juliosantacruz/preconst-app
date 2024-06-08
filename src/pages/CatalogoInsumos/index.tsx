@@ -14,6 +14,7 @@ import AsideModal from "@/components/AsideModal";
 import InsumoTable from "@/components/InsumoTable/InsumoTable";
 import { useInsumoStore } from "@/store/projectStore";
 import { Insumo } from "@/types/Insumo";
+import { filtrarCategorias } from "@/utils/FilterTabsByCategory";
 
 
 export default function CatalogoInsumos() {
@@ -22,17 +23,6 @@ export default function CatalogoInsumos() {
   const {insumos}=useInsumoStore()
   const { openModalFormInsumo, modalFormInsumo } = useUxStore();
 
-
-  const filtrarCategorias = (data: Insumo[], categoria: string) => {
-    let arrData: Insumo[] = [];
-    if (tabsFilter === "todos") {
-      arrData = data;
-    } else {
-      arrData = data.filter((insumo) => insumo.categoria === categoria);
-    }
-    arrData.sort((a, b) => a.clave.localeCompare(b.clave));
-    return arrData;
-  };
 
   let searchedInsumos: Insumo[] = [];
   if (searchValue.length > 0) {

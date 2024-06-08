@@ -5,12 +5,26 @@ import EditIcon from "@/assets/icons/general/EditIcon";
 import TrashIcon from "@/assets/icons/general/TrashIcon";
 import { setFormat } from "@/utils/CurrencyFormat";
 import { Concepto } from '@/types/Concepto';
+import { useUxStore } from '@/store/uxStore';
+import { useConceptoStore } from '@/store/projectStore';
 
 type Props = {
   catalogoArray: Concepto[];
 };
 
 export default function ConceptoTable({ catalogoArray }: Props) {
+  const {openModalFormConcepto} = useUxStore()
+  const { setConceptoToUpdate, deleteConcepto} = useConceptoStore()
+
+
+  const editConcepto=(concepto:Concepto)=>{
+    setConceptoToUpdate(concepto)
+    openModalFormConcepto(true)
+  }
+
+  const handleDelete=(id:string)=>{
+    deleteConcepto(id)
+  }
   return (
     <table className="ConceptoTable">
     <thead>
@@ -33,24 +47,15 @@ export default function ConceptoTable({ catalogoArray }: Props) {
             <td className="unit">{concepto.unidad}</td>
             <td className="price">{setFormat(concepto.precioUnitario as number)}</td>
             <td className="actions">
-              <BtnAction icon={<EditIcon />} className="" />|
-              <BtnAction icon={<TrashIcon />} className="" />
+              <BtnAction icon={<EditIcon />} className="" onClick={()=>editConcepto(concepto)} />|
+              <BtnAction icon={<TrashIcon />} className="" onClick={()=>handleDelete(concepto.id)}/>
             </td>
           </tr>
           )
         })
         : <p>no data</p>
       }
-      <tr>
-        <td className="clave">A23</td>
-        <td className="description">al;ksdjf;alksdjfadsf</td>
-        <td className="unit">mL</td>
-        <td className="price">$34,343.43</td>
-        <td className="actions">
-          <BtnAction icon={<EditIcon />} className="" />|
-          <BtnAction icon={<TrashIcon />} className="" />
-        </td>
-      </tr>
+
     </tbody>
   </table>
   )

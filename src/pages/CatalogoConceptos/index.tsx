@@ -10,35 +10,13 @@ import AsideModal from "@/components/AsideModal";
 import FormConcepto from "@/forms/FormConcepto/FormConcepto";
 import BtnAddProject from "@/components/BtnAddProject/BtnAddProject";
 
-import { Concepto } from "@/types/Concepto";
 import ConceptoTable from "@/components/ConceptoTable/ConceptoTable";
 
-const MockConcepto: Concepto[] = [
-  {
-    id: "1",
-    proyectoId: "",
-    fechaCreacion: "12-03-1202",
-    clave: "A121",
-    descripcion:
-      "lkjasdlfkjasd alsdkjfoiwe oweijrlkjlkjdsf sldkfjlskdjf lkjljljlj",
-    unidad: "mL",
-    cantidad: 23, // Cantidad en Presupesto
-    listadoInsumos: [
-      {
-        insumoId: "1", // Insumos en PU
-        cantidad: 23,
-      },
-      {
-        insumoId: "2", // Insumos en PU
-        cantidad: 23,
-      },
-    ],
-    precioUnitario: 34,
-  },
-];
+import {useConceptoStore} from '@/store/projectStore'
+
 export default function CatalogoConceptos() {
   const [searchValue, setSearchValue] = useState<string>("");
-
+  const {conceptos}=useConceptoStore()
   const { openModalFormConcepto, modalFormConcepto} = useUxStore();
   return (
     <>
@@ -51,7 +29,7 @@ export default function CatalogoConceptos() {
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/>
 
 
-        <ConceptoTable catalogoArray={MockConcepto} />
+        <ConceptoTable catalogoArray={conceptos} />
       </section>
 
       {modalFormConcepto && (

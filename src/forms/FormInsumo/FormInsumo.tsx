@@ -16,7 +16,7 @@ import { Insumo } from "@/types/Insumo";
 // Styles
 import "./FormInsumo.scss";
 import { useInsumoStore } from "@/store/projectStore";
-import ErrorMsg from "../ErrorMsg/ErrorMsg";
+import ErrorMsg from "@/components/ErrorMsg/ErrorMsg";
 import { CategoriasInsumos, Unidades } from "@/utils/SelectInputOptions";
 
 const insumoDefaultValue = {
