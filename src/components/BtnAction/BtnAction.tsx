@@ -10,7 +10,7 @@ type BtnActionType = {
 
 const BtnAction = ({ icon, onClick, className }: BtnActionType) => {
   return (
-    <button className={className ? `btnAction ${className}` : "btnAction"} onClick={onClick}>
+    <button className={className ? `btnAction ${className}` : "btnAction"} style={{border:'none'}} onClick={onClick}>
       {icon}
     </button>
   );

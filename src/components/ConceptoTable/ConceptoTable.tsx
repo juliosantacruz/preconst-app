@@ -27,14 +27,14 @@ export default function ConceptoTable({ catalogoArray }: Props) {
         catalogoArray?
         catalogoArray.map((concepto)=>{
           return(
-            <tr>
+            <tr key={concepto.id}>
             <td className="clave">{concepto.clave}</td>
             <td className="description">{concepto.descripcion}</td>
             <td className="unit">{concepto.unidad}</td>
             <td className="price">{setFormat(concepto.precioUnitario as number)}</td>
             <td className="actions">
-              <BtnAction icon={<EditIcon />} className="btnAction" />|
-              <BtnAction icon={<TrashIcon />} className="btnAction" />
+              <BtnAction icon={<EditIcon />} className="" />|
+              <BtnAction icon={<TrashIcon />} className="" />
             </td>
           </tr>
           )
@@ -47,8 +47,8 @@ export default function ConceptoTable({ catalogoArray }: Props) {
         <td className="unit">mL</td>
         <td className="price">$34,343.43</td>
         <td className="actions">
-          <BtnAction icon={<EditIcon />} className="btnAction" />|
-          <BtnAction icon={<TrashIcon />} className="btnAction" />
+          <BtnAction icon={<EditIcon />} className="" />|
+          <BtnAction icon={<TrashIcon />} className="" />
         </td>
       </tr>
     </tbody>
