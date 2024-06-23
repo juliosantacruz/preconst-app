@@ -2,6 +2,8 @@
   background-color: white;
   padding: 24px;
   border-radius: 20px;
+  width: 700px;
+  height: 750px;
 
   .form_header {
     display: flex;
@@ -26,17 +28,21 @@
       justify-content: space-between;
 
       .clave{
-        width: 100px;
+        width: 15%;
+        max-width: 100px;
       }
       .descripcion{
-        width: 400px;
+        width: 50%;
+        max-width: 400px
       }
       .unidad{
-        width: 100px;
+        width: 15%;
+        max-width: 100px
 
       }
       .precio{
-        width: 120px;
+        width: 20%;
+        max-width: 120px
       }
     }
     .textInput {
@@ -65,7 +71,11 @@
         height: 100px !important;
       }
     }
-
+    .conceptosList{
+      height: 300px;
+      overflow: hidden;
+      overflow-y: scroll;
+    }
     .btn-group {
       display: flex;
       justify-content: flex-end;

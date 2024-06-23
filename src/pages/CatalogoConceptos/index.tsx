@@ -34,7 +34,7 @@ export default function CatalogoConceptos() {
 
       {modalFormConcepto && (
         <AsideModal
-          widthModal={"50vw"}
+          widthModal={"60vw"}
           title="Nuevo Insumo"
           clossable={true}
           openModal={modalFormConcepto}

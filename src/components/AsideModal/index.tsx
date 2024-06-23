@@ -49,7 +49,7 @@ export default function AsideModal(Props: AsideProps) {
 
   return (
     <aside
-      className={classModal()}
+      className={`${classModal()} `}
       style={{ width: widthModal, backgroundColor:bgColor }}
 
     >
@@ -61,7 +61,7 @@ export default function AsideModal(Props: AsideProps) {
           </button>
         )}
       </div> */}
-      <div className="body">
+      <div className="modalBody">
 
       {children}
       </div>

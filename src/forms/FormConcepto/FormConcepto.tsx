@@ -45,14 +45,14 @@ export default function FormConcepto({ ProjectId }: Props) {
   const [addInsumo, setAddInsumo] = useState(true);
 
   // InsumoData
-  const [tabsFilter, setTabsFilter]=useState<string>('todos')
+  const [tabsFilter, setTabsFilter] = useState<string>("todos");
   const [searchValue, setSearchValue] = useState<string>("");
 
   const { openModalFormInsumo, openModalFormConcepto } = useUxStore();
   const { addConcepto, conceptoToUpdate, setConceptoToUpdate, updateConcepto } =
     useConceptoStore();
   const { insumos } = useInsumoStore();
-  console.log(formData)
+  console.log(formData);
   useEffect(() => {
     setFormData({
       id: v4(),
@@ -78,7 +78,7 @@ export default function FormConcepto({ ProjectId }: Props) {
 
     addConcepto(formData);
     onClear();
-    onCancel()
+    onCancel();
     setFormError(false);
   };
 
@@ -103,8 +103,6 @@ export default function FormConcepto({ ProjectId }: Props) {
     openModalFormConcepto(false);
   };
 
-
-
   // Manage Insumo data
   let searchedInsumos: Insumo[] = [];
   if (searchValue.length > 0) {
@@ -117,7 +115,7 @@ export default function FormConcepto({ ProjectId }: Props) {
     searchedInsumos = insumos;
   }
 
-  const insumoData = filtrarCategorias(searchedInsumos, tabsFilter)
+  const insumoData = filtrarCategorias(searchedInsumos, tabsFilter);
 
   return (
     <div className="newInsumo">
@@ -149,9 +147,13 @@ export default function FormConcepto({ ProjectId }: Props) {
               <label className="leLabel" htmlFor="descripcion">
                 Descripcion
               </label>
-              <input className="leInput" type="text" name="descripcion"
+              <input
+                className="leInput"
+                type="text"
+                name="descripcion"
                 onChange={(event) => onChange(event)}
-                value={formData.descripcion}/>
+                value={formData.descripcion}
+              />
             </div>
             <div className="textInput unidad">
               <label className="leLabel" htmlFor="unidad">
@@ -176,22 +178,26 @@ export default function FormConcepto({ ProjectId }: Props) {
               <label className="leLabel" htmlFor="">
                 Precio
               </label>
-              <div className="leInput" >
-                {formData.precioUnitario}
-              </div>
+              <div className="leInput">{formData.precioUnitario}</div>
             </div>
           </div>
 
           <div className="insumosData">
-          {
-          addInsumo?
-          <>
-          <SearchBar searchValue={searchValue} setSearchValue={setSearchValue}/>
-        <TabsFilter activeTab={tabsFilter} setTab={setTabsFilter} />
-        <InsumoTable insumoArray={insumoData} />
-          </>:
-          <FormInsumo/>
-          }
+            {addInsumo ? (
+              <>
+                <SearchBar
+                  searchValue={searchValue}
+                  setSearchValue={setSearchValue}
+                />
+                <TabsFilter activeTab={tabsFilter} setTab={setTabsFilter} />
+                <div className="conceptosList">
+                <InsumoTable insumoArray={insumoData} />
+
+                </div>
+              </>
+            ) : (
+              <FormInsumo />
+            )}
           </div>
 
           <div className="btn-group">
