@@ -65,7 +65,7 @@ const InsumoTable = ({ insumoArray }: Props) => {
             );
           })
         ) : (
-          <p>No Data...</p>
+          <tr><td>No Data...</td></tr>
         )}
       </tbody>
     </table>
